@@ -1,15 +1,13 @@
-// Assignment code here
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 //Input Variables //
-var inputs = [""];
-var uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowercases = "abcdefghijklmnopqrstuvwxyz";
-var numbers = "0123456789";
-var specials = "*&^%$#@!?><{}";
-var randPassword = "";
+var inputs = [""]
+var uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowercases = "abcdefghijklmnopqrstuvwxyz"
+var numbers = "0123456789"
+var specials = "*&^%$#@!?><{}"
+var randPassword = ""
 
 // here is the event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -23,13 +21,13 @@ function writePassword() {
 
 function generatePassword() {
   // here is the function for total length
-  var passLength = prompt("Enter your desired amount of characters:");
+  var passLength = prompt("Enter your desired amount of characters:")
 
   //here are is the check for password length
 
   if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     alert("invalid entry - Please enter a number between 8 and 128!");
-    return
+    return;
   }
 
   //prompts for lowercase/uppeercase/numbers/specials
@@ -71,21 +69,24 @@ function generatePassword() {
     lowercaseConfirm === false &&
     specialsConfirmConfirm === false
   ) {
-    alert("You must chose and least one type of character.");
+    alert("You must chose and least one type of character.")
     return;
   }
 
   var randPassword = ""
 
   //changes to passLength string via intergers//
-  const confirmLength = parseInt(passLength);
+  const confirmLength = parseInt(passLength)
 
   //an arrary for compiled choices of inputs//
   for (var i = 0; i < confirmLength; i++) {
-    inputs[Math.floor(math.random() * inputs.length)];
-
-    randPassword += inputs[math.floor(math.random() * inputs.length)];
-  }
-
-  return randPassword;
+    inputs[
+      Math.floor(Math.random() * inputs.length)];
+      
+      randPassword += inputs[
+        Math.floor(Math.random() * inputs.length)
+      ];
+    }
+    return randPassword;
 }
+
